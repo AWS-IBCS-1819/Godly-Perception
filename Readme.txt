@@ -9,4 +9,11 @@
 \
 This is a readme file for my senior year Computer Science\
 \
-Well, that\'92s it, I have nothing else to say}
+Well, that\'92s it, I have nothing else to say\
+\
+How to use GitHub\
+Git status - check if anything is not up to date\
+Git add - add stuff that is new to your repository\
+Git commit - m \'93\'94 - add a description\
+Git push - push it from your computer to GitHub\
+}
