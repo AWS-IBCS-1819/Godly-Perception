@@ -67,7 +67,7 @@ public class AboutMe{ //create class called AboutMe
     System.out.println("So, what do you want to know? \n Choose a catagory from below:"
     + "\n Name(dah) \n Nationality\n"
     + " Favorite Animal \n Tie color \n Laural or Yanny(a popular challange online)"
-    + "Age \n Years at AWS \n I wanna know about EVERYTHING!!(answer 'everything' for this option)");
+    + "\n Age \n Years at AWS \n I wanna know about EVERYTHING!!(answer 'everything' for this option)");
     Scanner in2 = new Scanner(System.in); //create another scanner
     String answer = in2.nextLine();
     //scan what the user input is and give different answer according to the input
@@ -84,7 +84,7 @@ public class AboutMe{ //create class called AboutMe
       System.out.println("Chloe's a " + Chloe.TieColor + ", aka, the best tie.");
     }
     else if (answer.equals("Laural or Yanny")||answer.equals("laural or yanny")||answer.equals("LAURAL OR YANNY")) {
-      System.out.println("Chloe hears" + Chloe.LauralOrYanny + "! Which she thinks is the 'correct' answer, and I strong disagree.");
+      System.out.println("Chloe hears" + Chloe.LauralOrYanny + "! Which she thinks is the 'correct' answer, and I strongly disagree.");
     }
     else if (answer.equals("Age")||answer.equals("age")||answer.equals("AGE")) {
       System.out.println("Chloe's " + Chloe.age + " years old.");
