@@ -15,7 +15,7 @@ public class convert{
 
   public static void main(String[] args) {
 //just block one of them out when testing, both should work
-//option 1 with loop
+//option 1 with loop, not really loop cause i just used a reverse method
     System.out.println("what do you wanna reverse?");
         Scanner in = new Scanner(System.in);
         String str = in.nextLine();
