@@ -19,8 +19,8 @@ public class Enclosure{
     return temp;
   }
 
-  public Enclosure() {
-    type = "";
-    temp = 0;
+  public Enclosure(String ty, int t) {
+    this.type = ty;
+    this.temp = t;
   }
 }

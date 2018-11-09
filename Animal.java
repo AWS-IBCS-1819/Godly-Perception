@@ -10,8 +10,8 @@ public class Animal{ //creating a class for all the animals
     return name;
   }
 
-  public Animal() {
-    name = "";
+  public Animal(String n) {
+    this.name = n;
   }
 
 }
