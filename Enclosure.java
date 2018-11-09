@@ -1,6 +1,7 @@
 public class Enclosure{
 
   String type;
+  String keeper;
   int temp;
 
   public void setType(String ty) {
@@ -19,8 +20,17 @@ public class Enclosure{
     return temp;
   }
 
-  public Enclosure(String ty, int t) {
+  public void setKeeper(String ke) {
+    keeper = ke;
+  }
+
+  public String getKeeper() {
+    return keeper;
+  }
+
+  public Enclosure(String ty, int t, String ke) {
     this.type = ty;
     this.temp = t;
+    this.keeper = ke;
   }
 }
