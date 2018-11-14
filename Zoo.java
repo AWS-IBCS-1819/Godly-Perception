@@ -4,70 +4,99 @@ import java.util.*; //import printers
 
 public class Zoo{ //create class Zoo
 
+  public void printAnimal (Animal[] a){
+    for(int i = 0; i < a.length; i++){
+      System.out.println(a[i].getName());
+    }
+
+
+  }
+  public Zoo(){
+  }
+
+
   public static void main(String[] args) { //main
 
-    Animal Monkey = new Animal("Monkeys"); //create new animal - monkeys
-    Enclosure Forest = new Enclosure("Forest", 85, "Julia");
+    Zoo z = new Zoo();
 
-    Animal Lion = new Animal("Lion"); //create new animal - lions
-    Enclosure Plains = new Enclosure("Plains", 91, "Rashida");
 
-    Animal Gator = new Animal("Gator"); //create new animal - gators
-    Enclosure AWS = new Enclosure("Annie Wright", 100000, "Some one called Zach");
+    Enclosure g1 = new Enclosure("Plains", 91, "Rashida");
+    Enclosure g2 = new Enclosure("Forest", 75, "Julia");
+    Enclosure[] yes = {g1, g2};
 
-    Map<String,String> m = new HashMap<String, String>(); //create new hashmap for (animal, enclosure)
-    m.put(Monkey.getName(),Forest.getType()); //add monkey to map
-    m.put(Lion.getName(),Plains.getType()); //add lion to map
-    m.put(Gator.getName(),AWS.getType()); //add gator to map
+    Animal q1 = new Animal("Big Giraffee", "Black", 6);
+    Animal q2 = new Animal("Silly Giraffee", "Brown", 13);
+    Animal q3 = new Animal("Mad Giraffee", "Spots", 100);
+    Animal q4 = new Animal("Happy Giraffee", "White", 25);
+    Animal[] Giraffee = {q1, q2, q3, q4};
 
-    Map<String,Integer> m2 = new HashMap<String, Integer>(); //create another hashmap for (animal, temperature)
-    m2.put(Monkey.getName(), Forest.getTemp()); //add monkey to map
-    m2.put(Lion.getName(), Plains.getTemp()); //add lion to map
-    m2.put(Gator.getName(), AWS.getTemp()); //add gator to map
+    Animal w1 = new Animal("Black Bear", "Black",23);
+    Animal w2 = new Animal("Grizzly Bear", "Brown", 56);
+    Animal w3 = new Animal("Polar Bear", "White", 2100);
+    Animal w4 = new Animal("Bear Bear", "Rainbow", 20);
+    Animal[] Bear = {w1, w2, w3, w4};
 
-    Map<String,String> m3 = new HashMap<String, String>(); //create another hashmap for (animal, keeper)
-    m3.put(Monkey.getName(), Forest.getKeeper()); //add monkey to map
-    m3.put(Lion.getName(), Plains.getKeeper()); //add lion to map
-    m3.put(Gator.getName(), AWS.getKeeper()); //add gator to map
+    Map<String, Animal[]> m;
+    m = new HashMap<String, Animal[]>();
+    m.put(g1.getType(), Giraffee);
+    m.put(g2.getType(), Bear);
 
-    while(true){ //whilte loop so user can do it over and over again
+     //whilte loop so user can do it over and over again
     System.out.println("\n");
     System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~");
     System.out.println("Welcome to the zoo!");
-    System.out.println("Which animal would you like to know about?");
-    System.out.println("Monkeys, lions, or gators?(enter exit if you want to quit)");
-
+    System.out.println("Here are all the enclosures we have:");
+    System.out.print(yes[0].getType() + ", ");
+    System.out.print(yes[1].getType());
+    while(true){
+    System.out.println("\n Which one would you like to know about? Plains or forests? (enter exit if you want to quit)");
     Scanner In = new Scanner(System.in); //scan user input
     String answer = In.nextLine();
-    if(answer.equals ("monkeys")||answer.equals("Monkeys")){ //if user wants to see monkeys
-      String mon = m.get(Monkey.getName()); //get the enclosure value according to the key "monkeys"
-      System.out.println("Monkeys live in the "+ mon + " enclosure!");
-      int mon2 = m2.get(Monkey.getName()); //get the temperature value accoding to the key "monkeys"
-      System.out.println("The temperature of that enclosure is "+ mon2 + ".");
-      String monk = m3.get(Monkey.getName());
-      System.out.println("And the keeper of this enclosure is "+ monk + ".");
+    if(answer.equals ("plains")||answer.equals("Plains")){ //if user wants to see monkeys
+      System.out.println("The temperature of the plains is "+ g1.getTemp());
+      System.out.println("And the keeper of the plains is "+ g1.getKeeper());
+      System.out.println("Here are all the animals in the plains: ");
+      z.printAnimal(m.get("Plains"));
+      System.out.println("Which specific giraffee do you want to know more about?");
+      Scanner In1 = new Scanner(System.in); //scan user input
+      String answer2 = In1.nextLine();
+      if(answer2.equals ("Big Giraffee")||answer2.equals("big giraffee")){
+        System.out.println("The big giraffee is " + q1.getColor() + " and he is " + q1.getHeight() + " feet tall.");
+      }
+      else if(answer2.equals ("Silly Giraffee")||answer2.equals("silly giraffee")){
+        System.out.println("The silly giraffee is " + q2.getColor() + " and he is " + q2.getHeight() + " feet tall.");
+      }
+      else if(answer2.equals ("Mad Giraffee")||answer2.equals("mad giraffee")){
+        System.out.println("The mad giraffee is " + q3.getColor() + " and she is " + q3.getHeight() + " feet tall.");
+      }
+      else if(answer2.equals ("Happy Giraffee")||answer2.equals("happy giraffee")){
+        System.out.println("The happy giraffee is " + q4.getColor() + " and she is " + q4.getHeight() + " feet tall.");
+      }
     }
-    else if(answer.equals ("lions")||answer.equals("Lions")){ //if user wants to see lions
-      String mon3 = m.get(Lion.getName()); //get the enclosure value according to the key "lions"
-      System.out.println("Lions live in the "+ mon3 + " enclosure!");
-      int mon4 = m2.get(Lion.getName()); //get the temperature value accoding to the key "lions"
-      System.out.println("The temperature of that enclosure is "+ mon4 + ".");
-      String monkk = m3.get(Lion.getName());
-      System.out.println("And the keeper of this enclosure is "+ monkk + ".");
-    }
-    else if(answer.equals ("gators")||answer.equals("Gators")){ //if user wants to see gators
-      String mon5 = m.get(Gator.getName()); //get the enclosure value according to the key "gators"
-      System.out.println("Gators live in "+ mon5);
-      int mon6 = m2.get(Gator.getName()); //get the temperature value accoding to the key "gators"
-      System.out.println("The temperature of AWS is "+ mon6 + ".");
-      String monkkk = m3.get(Gator.getName());
-      System.out.println("And the keeper of AWS is "+ monkkk + ".");
+    else if(answer.equals ("forest")||answer.equals("Forest")){ //if user wants to see monkeys
+      System.out.println("The temperature of the forest is "+ g2.getTemp());
+      System.out.println("And the keeper of the forest is "+ g2.getKeeper());
+      System.out.println("Here are all the animals in the forest: ");
+      z.printAnimal(m.get("Forest"));
+      System.out.println("Which specific bear do you want to know more about?");
+      Scanner In2 = new Scanner(System.in); //scan user input
+      String answer3 = In2.nextLine();
+      if(answer3.equals ("Black Bear")||answer3.equals("black bear")){
+        System.out.println("The black bear is " + w1.getColor() + " and he is " + w1.getHeight() + " feet tall.");
+      }
+      else if(answer3.equals ("Grizzly Bear")||answer3.equals("grizzly bear")){
+        System.out.println("The grizzly bear is " + w2.getColor() + " and he is " + w2.getHeight() + " feet tall.");
+      }
+      else if(answer3.equals ("Polar Bear")||answer3.equals("polar bear")){
+        System.out.println("The polar bear is " + w3.getColor() + " and he is " + w3.getHeight() + " feet tall.");
+      }
+      else if(answer3.equals ("Bear Bear")||answer3.equals("bear bear")){
+        System.out.println("The bear bear is " + w4.getColor() + " and she is " + w4.getHeight() + " feet tall.");
+      }
     }
     else if(answer.equals ("exit")||answer.equals("Exit")){ //if the user wants to quit
     break; //break while loop
-  }
-  }
-
-
+      }
+    }
   }
 }
